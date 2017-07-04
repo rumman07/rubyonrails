@@ -1,0 +1,4 @@
+$rvm list
+$rvm use ruby-2.3.0
+$rails s -b $IP -p $PORT
+$rails new newapp
