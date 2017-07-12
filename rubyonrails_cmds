@@ -66,3 +66,20 @@ $rvm use ruby-2.3.0
 $rails s -b $IP -p $PORT
 $rails new newapp
 $$rails server --binding=<server_public_IP>  #To start the rails server cd into the app directory 
+
+
+
+$ctrl+l  #clears the screen shortcut 
+*****************************Ruby Programming Language*****************************************
+#A variable does not point to a variable. A variable points to the assignment of a variable
+####String interpolation doesnt work with single quote 
+name = "Rumman Ahmed"
+"My name is #{name}"  #Prints out the value of the variable name 
+###You cannot use signle quote within a single quote. To use single quote inside a string surround it with double quote or you can use the escape character \ to preceede the single quote 
+###the stringvar.length method counts the space as a character 
+
+
+
+
+
+
