@@ -78,8 +78,25 @@ name = "Rumman Ahmed"
 ###You cannot use signle quote within a single quote. To use single quote inside a string surround it with double quote or you can use the escape character \ to preceede the single quote 
 ###the stringvar.length method counts the space as a character 
 
+To start irb console:  irb
 
+***************Working with Strings**************************************************************************
+String concat structure:  String1 + String2 || String1 + " " + String2 + String3
 
+To find out what class the object belongs to:  Variable_name.class  ||  1.class
 
+To find out methods available to an object:  objectname.methods
+
+Some methods that can be used on objects:  objectname.nil?, objectname.empty?, objectname.length, objectname.reverse
+
+String interpolation (remember has to be within double quotes):  name = "Mashrur" ==> "My name is #{name}"  ##This will print out the value of name in the line "My name is...."
+
+To escape the evaluation of #{variablename} within a String, prepent with a \:  \#{variablename}
+
+To get input from the command line use the following method:  gets.chomp
+
+To assign the input to a variable so it can be referenced later on:  variablename = gets.chomp
+
+******************Working with Numbers******************************************************************************
 
 
