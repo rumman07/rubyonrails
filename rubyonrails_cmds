@@ -98,5 +98,31 @@ To get input from the command line use the following method:  gets.chomp
 To assign the input to a variable so it can be referenced later on:  variablename = gets.chomp
 
 ******************Working with Numbers******************************************************************************
-
+puts 1 + 2  #To add and display the value of 1 + 2
+#Different operations
+1 + 2  #Addition
+1 * 2  #Multiplication
+1 / 2  #Division
+1 - 2  #Subtraction
+1 % 2  #Modulus (gives the remainder when two numbers are divided)
+20 is an integer, 20.0 is a float  #To indicate a number is a float instead of an integer include a . in the number or 20.to_f 
+#Methods you can use to find odd and even number:
+object.odd?
+22.odd?
+object.even?
+22.even?
+#odd number has a remainder of 1 and even number has a remainder of 0 
+#Comparisons:
+a == b
+1 == 2
+3 == 3
+5 < 2
+2 <= 5
+5 > 2
+5 && 6
+5 || 6
+#Generate a random number between 0 and less than 10
+rand(10)  #Does not include 10 prints out a random number from 0-9
+objectname.to_i or "5".to_i  #To convert an string object to integer
+objectname.to_s or 5.to_s  #To convert an object to string
 
