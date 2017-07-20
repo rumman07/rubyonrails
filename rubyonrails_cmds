@@ -126,3 +126,172 @@ rand(10)  #Does not include 10 prints out a random number from 0-9
 objectname.to_i or "5".to_i  #To convert an string object to integer
 objectname.to_s or 5.to_s  #To convert an object to string
 
+
+
+*************************************Methods and Branching*************************************************
+def multiply(first_number, second_number)
+  first_number.to_f * second_number.to_f
+end
+
+def divide(first_number, second_number)
+  first_number.to_f / second_number.to_f
+end
+
+def subtract(first_number, second_number)
+  second_number.to_f - first_number.to_f
+end
+
+def mod(first_number, second_number) 
+  first_number.to_f % second_number.to_f
+end
+
+puts "What would you like to do 1)Multiply, 2)Divide, 3)Subtract, 4)Mod"
+prompt = gets.chomp 
+
+puts "Please enter First Number"
+first_number = gets.chomp
+puts "PLease enter Second Number"
+second_number = gets.chomp
+
+if prompt == '1'
+  puts "You have choosen to multiuply #{first_number} with #{second_number}"
+  result = multiply(first_number, second_number)
+elsif prompt == '2'
+  puts "YOu have choosen to divide #{first_number} with #{second_number}"
+  result = divide(first_number, second_number)
+elsif prompt == '3'
+  puts "You have choosen to subtract #{second_number} from #{first_number}"
+  result = subtract(first_number, second_number)
+elsif prompt == '4'
+  puts "You have choosen to mod #{first_number} with #{second_number}"
+  result = mod(first_number, second_number)
+else
+  puts "You have made an invalid choice"
+end 
+
+puts "The result is #{result}"
+
+
+************************************************Arrays and Iterators**************************************************************************
+#An Array is an ordered list of objects and elements. It maintains an index for each item so you can access those elements 
+#An Array 
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, "Rumman", [1, 2, 3]]
+#Since Arrays have an index associated with each object they are very easy to grab item from the Array to display them 
+a[1]
+puts a
+a.empty?
+a.include?("Rumman")
+a.reverse
+a.reverse!   #mutates the caller
+a.shuffle
+(0..25).to_a  #takes a range of 0 to 25 and creates an array
+y = (0..99).to_a.shuffle!  #takes a range of 0 to 99 creates an array and shuffle the numbers inside the array
+z = (0..10).to_a
+z
+z << 25  #adds an element to an array
+z.push(30) #Another way of adding an object to an array 
+z.unshift("Rumman")  #Adds an element to the begining of the array 
+z[0]
+z.pop   #deletes an object from the end of an array 
+z.uniq  #hides duplicate elements in an array 
+z.uniq! #mutates the caller the duplicates are gone
+y.each {|i| puts i}  #to iterate through an array use the .each method. It loops through an array 
+#Using the for loop to iterate through an array 
+for number in y
+puts "Hi"
+end 
+
+#Creating an array of strings
+names = ["joe", "john", "james"]
+#To iterate over the array and print the names with a hello salutation
+names.each do |food|
+puts "Hello #{food}"
+end 
+
+names.each do |food|
+puts "Hello #{food.capitalize}"
+end 
+
+names.each { |food| puts "Hello #{food.capitalize}" }   #one liner 
+
+y.select { |number| number.odd? }  #The select method takes a boolean expression to evaluate and if that boolean expression evaluates to true its basically gets the number 
+y.each { |number| print number if number.odd? }  #another way of iterating the array and printing out the odd numbers 
+
+p = ["My", "name", "is", "Rumman"]
+p.join
+p.join(' ') 
+
+#######
+#Array, created by including elements within square brackets:
+
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+#The index for an array starts with 0, so in the array above a[0] is 1
+
+#Some methods you can use on arrays:
+
+arrayname.empty?
+
+arrayname.include?(itemname)
+
+arrayname.reverse
+
+arrayname.reverse! # use ! at the end to change the original array
+
+arrayname.shuffle
+
+arrayname.push(30) # will append new element 30 to the end array
+
+arrayname << 25 # << known as shovel operator will also append new element to the end of the array
+
+arrayname.unshift("someelement") # will add element "some element" to the beginning of the array
+
+arrayname.pop # will remove the last element of the array and return 1
+
+arrayname.uniq # will remove all the duplicates and display (will not change the original array)
+
+arrayname.uniq! # will remove all the duplicates in the original array
+
+#A range:
+
+(0..25).to_a
+
+#will create an array with elements from value 0 to 25
+
+(0..99).to_a.shuffle!
+
+#will create an array with elements from value 0 to 99 in random order
+
+#To loop through an array named y using the .each method and print out the value of each element:
+
+y.each { |i| puts i }
+
+#In plain terms: For each element i in array y print the value of i
+
+To execute iteration through an array called names using a block:
+
+names.each do |randomvariablename| # starts the do block
+
+puts "Hello #{randomvariablename}" # executes code for each element
+
+end # ends the do block
+
+#To capitalize (or use another method) on each element of array called names:
+
+names.each { |randomvariablename| puts "Hello #{randomvariablename.capitalize}" }
+
+#Using the select method to pickup all the odd numbers from an array y:
+
+y.select { |number| number.odd? } # selects the value and returns it only if the condition is met
+
+#To join the elements of an array named p:
+
+p.join
+
+#To join the elements of an array with space in between each element:
+
+p.join(" ")
+
+To join the elements of an array with dash in between each element:
+
+p.join("-")
