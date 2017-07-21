@@ -295,3 +295,72 @@ p.join(" ")
 To join the elements of an array with dash in between each element:
 
 p.join("-")
+
+
+*************************************************************HASHES************************************************************************************************************
+#Like Array a hash is a data structure that stores values but unlike array a hash also has keys associated with those values. Hash exist in a key value pair
+#The key is usually a symbol but it can be other things as well like a string and the values can be any data type
+#Creating a hash with key as strings
+my_details = {'name' => 'rumman', 'favcolor' => 'green'}
+my_details["favcolor"]  #To call a hash refer to the key 
+#creating a hash with key as symbols
+myhash = {a: 1, b: 2, c: 3, d: 4} 
+myhash[:c]  #to call the value refer to the symbol 
+myhash[:e] = 7  #to add value to the hash 
+myhash[:name] = "Rumman"
+myhash.delete(:b)  #to delete a value from hash 
+
+#To create a hash
+number = {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9}
+#To iterate through a hash
+number.each { |k, v| puts "The key is #{k}, and the value is #{v}" }
+#To iterate through a hash and delete multiple values 
+number.each { |k, v| number.delete(k) if v > 3 }
+#To slect the odd number in the hash
+number = {a: 1, b: 2, c: 3, d: 5, e: 9}
+number.select { |k, v| v.odd? }
+
+######
+To create a hash called my_details include the elements within { }:
+
+my_details = {'name' => 'mashrur', 'favcolor' => 'red'}
+
+To access the value and notify me what favcolor is:
+
+my_details["favcolor"]
+
+Alternate syntax to create key, value pairs in hash:
+
+myhash = {a: 1, b: 2, c: 3, d: 4}
+
+To access the value for key c above:
+
+myhash[:c]
+
+To add a key,value pair to the hash above:
+
+myhash[:d] = 7
+
+myhash[:name] = "Mashrur"
+
+To delete a key,value pair simply delete the key:
+
+myhash.delete(:d)
+
+To iterate through a hash using .each method and print out value:
+
+myhash.each { |somekey, somevalue| puts somevalue }
+
+To iterate through a hash using .each method and print out both key and value in friendly format:
+
+myhash.each { |somekey, somevalue| puts "The key is #{somekey} and the value is #{somevalue}" }
+
+To iterate through and delete a items from a hash based on a condition (in the condition below if the value is greater than 3:
+
+myhash.each { |k, v| myhash.delete(k) if v > 3 }
+
+Use select method to display items only if value of the item is odd
+
+myhash.select { |k, v| v.odd? }
+
+****************************************************************************************************************************************************************************
