@@ -384,24 +384,89 @@ myhash.select { |k, v| v.odd? }
 *#Polymorphism: Is when a class inherits the behaviors of another class, but has the ability to not inherit everything and change some
 *of it's inherited behaviors. For example to write a method that does something differently from the inherited method  
 
+################Concept Code
+class User  #Class declaration
+  
+  def initialize(name)   #This is the constructor method which initializes the object in other words resets the instance variable whenever a new object is created 
+    @name = name
+  end
+  
+  def run               #Instance method part of the User class 
+    puts "Hi I am running"
+  end 
+     
+end
+
+user = User.new("Rumman")  #Initalization of an object of the User class 
+
+puts User.ancestors  #Lists out all of the super classes of the User class  
+
+puts user 
+
+
+**************************Getter and Setter Methods*********************************
+class User    #Class declaration 
+  
+  def initialize(name)   #The constructor 
+    @name = name         #@name is the instance variable 
+  end
+  
+  def run                #The run method is the instance method of the class User 
+    puts "Hi I am running 
+  end 
+  
+  def get_name   #This is the getter method for the class User 
+    @name
+  end
+  
+  def set_name=(name)  #This is the Setter method for the class User 
+    @name = name 
+  end 
+end 
+
+user = User.New("Rumman")
+puts user.get_name 
+user.set_name = "John"
+puts user.get_name 
+
+***************Shortcut for Getter and Setter Methods******************************
+class User    #Class declaration 
+  attr_accessor :name, :email   #This is the shortcut for getter and setter methods of the class 
+  def initialize(name, email)    #The constructor method initializes the instance variable of the object when the object gets created 
+    @name = name                 #@name, @email these two are the instance variable of the object it exists as long as the object exists and gets a fresh copy whenever a new object is created 
+	@email = email
+  end 
+  
+  def run                        #This is the instance method of the objects of the User class 
+    puts "Hi I am running"
+  end 
+end
+
+user = User.new("Rumman", "rumman@example.com")
+puts "My user's name is #{user.name} and his email is #{user.email}"
+user.name = "John"
+user.email = "john@example.com"
+puts "My user's new name is #{user.name} and his email is #{user.email}"
 
 
 
 
 
+#Class Method : A class method can be called directly on the class without instantiating any objects 
+
+
+
+
+#Inheritance 
 
 
 
 
 
-
-
-
-
-
-
-
-
+#Module : A Module is similar to a class but, it basically is a collection of behaviors that other classes can use via mixins
+#You have to include the Module in the class that you want to use but you cannot have an object of a module 
+#You cannot initiate an instance variable of a Module. A Module has to be mixed in to a class and then you can use the methods in a Module 
+#By naming convention Modules should have a name ending with able
 
 
 
