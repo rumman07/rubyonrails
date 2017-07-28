@@ -452,24 +452,112 @@ puts "My user's new name is #{user.name} and his email is #{user.email}"
 
 
 
-#Class Method : A class method can be called directly on the class without instantiating any objects 
+#################Class Method : A class method can be called directly on the class without instantiating any objects 
+
+class User
+  attr_accessor :name, :email 
+  
+  def initialize(name , email)
+    @name = name 
+	@email = email 
+  end 
+  
+  def run 
+    puts "Hi I am running"
+  end 
+  
+  def self.identify_yourself    #This is a class method declared with self. 
+    puts "Hey I am a class method"
+  end 
+end 
+
+User.identify_yourself   #A class method can be called directly on the class without instantiating any objects
+
+
+################Inheritance and Polymorphism 
+
+class User   #Class Declaration 
+  attr_accessor :name, :email    #Shortcut for getter and setter method 
+  
+  def initialize(name)           #Constructor @name and @email are the two instance variables  
+    @name = name 
+	@email = email 
+  end 
+  
+  def run                        #Instance method 
+    puts "Hi I am running"
+  end 
+end 
+
+class Buyer < User               #Inheritance. The buyer sub class is inheriting the behaviors of the User super class 
+  def run            #Polymorphism. The behavior of the run instance method of the User class is being modified in the Buyer sub class 
+    puts "Hi I am not running from the Buyer class" 
+  end 
+end 
+
+class Seller < User        #Inheritance
+
+end
+
+class Admin < User         #Inheritance 
+
+end 
+
+user = User.new("name", "name@example.com"_)   #Initializing an object of the User class
+puts "My user's name is #{user.name} and his email is #{user.email}"
+
+buyer1 = Buyer.new("name1", "name1@example.com")  #Initializing an object of the Buyer class 
+buyer.run
+
+seller1 = Seller.new("name2", "name2@example.com")   #Initializing an object of the Seller class 
+seller1.run
+
+admin1 = Admin.new("name3", "name3@example.com")     #Initializing an object of the admin class 
+admin.run 
 
 
 
-
-#Inheritance 
-
-
-
-
-
-#Module : A Module is similar to a class but, it basically is a collection of behaviors that other classes can use via mixins
+###############Module : A Module is similar to a class but, it basically is a collection of behaviors that other classes can use via mixins
 #You have to include the Module in the class that you want to use but you cannot have an object of a module 
 #You cannot initiate an instance variable of a Module. A Module has to be mixed in to a class and then you can use the methods in a Module 
 #By naming convention Modules should have a name ending with able
 
+module Destructable 
+  
+  def destroy(anyobject)
+    puts "I will destroy the object"
+  end 
+  
+end 
 
+class User 
+  include Destructable
+  
+  attr_accessor :name, :email 
+  
+  def initialize(name, email)
+    @name = name 
+	@email = email 
+  end 
+  
+#This is a instance method    
+  def run 
+    puts "Hi I am running"
+  end 
+  
+#This is the class method 
 
+  def self.identify_yourself 
+    puts "Hey I am a class method"
+  end  
+  
+end 
+
+User.identify_yourself 
+
+user = User.new("Rumman", "rumman@example.com")
+
+user.destroy("myname") 
 
 
 
