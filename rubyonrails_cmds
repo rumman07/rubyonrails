@@ -321,7 +321,7 @@ number = {a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9}
 number.each { |k, v| puts "The key is #{k}, and the value is #{v}" }
 #To iterate through a hash and delete multiple values 
 number.each { |k, v| number.delete(k) if v > 3 }
-#To slect the odd number in the hash
+#To select the odd number in the hash
 number = {a: 1, b: 2, c: 3, d: 5, e: 9}
 number.select { |k, v| v.odd? }
 
