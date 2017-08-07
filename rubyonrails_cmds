@@ -74,6 +74,100 @@ $$rails server --binding=<server_public_IP>  #To start the rails server cd into 
 
 
 
+####Multi Line or Block Ruby Comments
+#Multiple lines of text or code can be defined as comments using the Ruby =begin and =end comment markers. These are known as the 
+#comment block markers. Example to provide a comment block containing multiple lines of descriptive text
+=begin
+This is a comment line 
+it explains that the next line of code displays 
+a welcome message
+=end 
+#Lines of Ruby code can be blocked out so that they are not executed by the interpreter using the block markers
+
+
+
+
+#######################Declaring COnstans and  Variables********************************************************************** 
+=begin 
+A Ruby constant is used to store a value for the duration of a Ruby program's execution. A common convention for declaring constants 
+is to use uppercase letters for the entire name
+Unlike other programming languages, Ruby actually allows the value assigned to a constant to be changed after it has been created
+The Ruby interpreter will, however, issue a warning - even though it allows the change. Constants declared within a class or module are
+available anywhere within the context of that class or module. Constants declared outside of a class or module are assigned global scope
+=end
+
+=begin
+Ruby, is a dynamically typed language. It means that you do not need to declare a type when creating a variable. Instead, the Ruby interpreter
+looks at the type of value you are assigning to the variable and dynamically works out the variable type. Once a variable has been declared
+you can dynamically change the variable type later in your code. Ruby supports parallel assignment of variables. This is useful if you need
+to assign values to a number of variables. To find out the variable type use the kind_of? method of the object class 
+$ y.kind_of? Integer 
+One of simplest ways to change the type of a variable is to simply assign a new value to it. Ruby will dynamically change the type for that
+variable to match the type of the new value assigned
+The Ruby variable classes have methods that can be called to convert their value to a different type. For example, the Fixnum class has a
+method named to_f that can be used to retrieve the integer stored in a variable as a floating point value
+Similarly, you can convert a Ruby integer to a string using the to_s() method. The to_s() method takes as an argument the number base to
+which you want the conversion made. If no number base is specified, decimal is assumed. Convert to binary by specifying a number base of 2
+convert to hexadecimal by specifying a number base of 16 or octal a number base of 8. In fact, we can use any number base between 1 and 36
+when using the to_s method
+=end 
+
+=begin
+Scope defines where in a program a variable is accessible. Ruby has four types of variable scope; local, global, instance and class. In
+addition, Ruby has one constant type. Each variable type is declared by using a special character at the start of the variable name as 
+outlined below:
+$ Variable Scope is a global variable 
+@ Variable Scope an instance variable 
+a to z || _ Variable Scope is a local variable 
+@@ Variable scope is a class variable 
+
+In addition, Ruby has two pseudo-variables which cannot be assigned values. These are nil which is assigned to uninitialized variables and
+self which refers to the currently executing object
+
+Detecting the scope of a variable. A useful technique to find out the scope of a variable programmatically is to use the defined? method
+defined? x returns the scope of the variable x referenced, or nil if the variable is not defined in the current context
+=end 
+
+=begin
+Local variables are local to the code construct in which they are declared. For example, a local variable declared in a method or within a
+loop cannot be accessed outside of that loop or method. Local variable names must begin with either an underscore or a lower case letter
+=end 
+
+=begin
+Global variables in Ruby are accessible from anywhere in the Ruby program, regardless of where they are declared. Global variable names are
+prefixed with a dollar sign ($). Use of global variables is strongly discouraged. The problem with global variables is that, not only are
+they visible anywhere in the code for a program, they can also be changed from anywhere in the application. This can make tracking bugs difficult
+Pre-defined global variables to obtain information about the Ruby environment:
+$@  The location of latest error 
+$_  The string last read by gets 
+$.  The line number last read by interpreter 
+$&  The string last matched by regexp 
+$~  The last regexp match, as an array of subexpressions 
+$n  The nth subexpression in the last match (same as $~[n]) 
+$=  The case-insensitivity flag 
+$/  The input record seperator 
+$\  The output record seperator 
+$0  The name of the ruby script file currently executing 
+$*  The command line arguments used to invoke the script 
+$$  The ruby interpreter's process ID 
+$?  The exit status of the last executed child process   
+=end 
+
+=begin
+A class variable is a variable that is shared amongst all instances of a class. This means that only one variable value exists for all 
+objects instantiated from this class. This means that if one object instance changes the value of the variable, that new value will 
+essentially change for all other object instances. Another way of thinking of class variables is as global variables within the context of 
+a single class. Class variables are declared by prefixing the variable name with two @ characters (@@). Class variables must be initialized
+at creation time. For example: @@total = 0 
+=end 
+
+=begin 
+Instance variables are similar to Class variables except that their values are local to specific instances of an object. For example if a
+class contains an instance variable called @total, if one instance of the object changes the current value of @total the change is local to
+only the object that made the change. Other objects of the same class have their own local copies of the variable which are independent of
+changes made in any other objects. Instance variables are declared in Ruby by prefixing the variable name with a single @ sign: @total = 10
+=end 
+
 $ctrl+l  #clears the screen shortcut 
 *****************************Ruby Programming Language*****************************************
 #A variable does not point to a variable. A variable points to the assignment of a variable
