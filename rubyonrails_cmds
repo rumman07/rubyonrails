@@ -226,6 +226,110 @@ objectname.to_i or "5".to_i  #To convert an string object to integer
 objectname.to_s or 5.to_s  #To convert an object to string
 
 
+*****************************Conditionals************************************************************************
+###Basic conditionals:
+if my_variable > 10
+  puts my_variable
+end
+
+###Extended Conditional 
+if my_variable > 10 
+  puts my_variable 
+else
+  puts "Too Small!"
+end 
+
+###Extended Condiditon: Elsif
+if my_variable > 10
+   ......
+elsif my_variable < 10
+   ......
+else 
+   ......
+end 
+
+###One Line Conditionals
+puts "Big Number" if my_variable > 10
+
+puts "Small Number" unless my_variable > 10   #unless acts like if execpt it is negated i.e. unless => if the condition is not met 
+
+###Basic Negated Conditional  #unless can also function as a regular conditional statement which states if the condition is not met
+unless my_variable > 10 
+  puts my_variable 
+end 
+
+###Ternary Statement: Another way to write If Else statement in one line 
+my_variable > 10 ? puts("big") : puts("small")
+
+
+###Conditional can have more than one Elsif:
+if my_var == 10
+  ....
+elsif my_var == 9
+  ....
+elsif my_var == 8
+  ....
+elsif my_var == 7
+  ....
+end 
+
+
+###Case: (AKA switch)  #Simpler alternative to multiple elsif clauses
+case my_var
+  when 10
+    ....
+  when 9
+    ....
+  when 8
+    ....
+  when 7
+    ....
+end 
+
+###Conditionals can test multiple conditions at once 
+#Boolean AND &&
+if my_var ==10 && your_var == 5 
+  ....
+end 
+###If my_var == 9 the condition is automatically false and the second condition is not tested 
+
+#Boolean OR ||
+if my_var == 10 || your_var == 5
+  ....
+end 
+###If my_var == 10 the condition is automatically true and the second condition is not tested 
+
+###Conditions can be negated 
+#NOT ! 
+if !my_var == 10
+  ....
+end 
+###If my_var == 10 then !my_var says change that true to a false and vice-versa. This is called negating 
+
+
+###We can also test for inequality 
+if my_var != 10 
+  ....
+end 
+
+
+###We can also test strings 
+if my_var == "Y"
+  ....
+elsif my_var == "N"
+  ....
+else 
+  ....
+end 
+
+
+**********************Basic Comparison Tests*********************************************************************  
+a > b   #Greater than 
+a < b   #Less than 
+a >= b  #Greater than or equal 
+a <= b  #Less than or equal 
+a == b  #Equal 
+
 
 *************************************Methods and Branching*************************************************
 def multiply(first_number, second_number)
