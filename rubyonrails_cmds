@@ -196,6 +196,17 @@ To get input from the command line use the following method:  gets.chomp
 
 To assign the input to a variable so it can be referenced later on:  variablename = gets.chomp
 
+puts "cat, dog, penguin".upcase
+
+puts "CAT, DOG, PENGUIN".downcase
+
+##This block of code takes a sentence as a user input and breaks it up word by word and displays the number of words in the sentence
+puts "Please type a sentence"
+user_sentence = gets 
+number_of_words = user_sentence.split(" ").count 
+puts "Your sentence had #{number_of_words} word#{number_of_words == 1 ? ".":"s."}"
+
+
 ******************Working with Numbers******************************************************************************
 puts 1 + 2  #To add and display the value of 1 + 2
 #Different operations
@@ -375,6 +386,31 @@ end
 puts "The result is #{result}"
 
 
+
+**************************************************Iterators************************************************************************************
+#Iterators are special block of code that can operate a statement of code on each member of a data collection
+#Iterators are useful because it acts as a program loops for collection 
+#DRY means do not repeat yourself an important fundamental of programming 
+first_five_integers = [1, 2, 3, 4, 5]
+
+#Typing is out 
+puts first_five_integers[0]
+puts first_five_integers[1]
+puts first_five_integers[2]
+..........
+
+#Iteratoring through the array 
+first_five_integers.each do |my_integer|
+  puts my_integer 
+end 
+
+#Iteratoring through a hash 
+my_hash = {"orange" => true, "banana" => false}
+my_hash.each do |key, value|
+  puts "The key is #{key} and it s value is #{value}"
+end 
+
+
 ************************************************Arrays and Iterators**************************************************************************
 #An Array is an ordered list of objects and elements. It maintains an index for each item so you can access those elements 
 #An Array 
@@ -424,7 +460,14 @@ p = ["My", "name", "is", "Rumman"]
 p.join
 p.join(' ') 
 
-#######
+#######Nested Arrays: (aka multi-dimensional arrays)
+childhood_games_played = [["make believe", true], ["tag", false]] 
+childhood_games_played[0][0]  #will return "make believe"
+childhood_games_played[1][0]  #will return "tag"
+childhood_games_played[0][1]  #will return true 
+childhood_games_played[1][1]  #will return false
+
+
 #Array, created by including elements within square brackets:
 
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -499,6 +542,20 @@ To join the elements of an array with dash in between each element:
 
 p.join("-")
 
+my_array.sort 
+my_array.sort!
+
+#Sorting with a block of code 
+my_array.sort do |a,b|
+  a <=> b
+end 
+
+#Build an array off of data in an array 
+my_array = [1, 2, 3]
+
+odd_or_even = my_array.map do |element|
+  element % 2 == 0 ? "even" : "odd"
+end 
 
 *************************************************************HASHES************************************************************************************************************
 #Like Array a hash is a data structure that stores values but unlike array a hash also has keys associated with those values. Hash exist in a key value pair
@@ -523,8 +580,13 @@ number.each { |k, v| number.delete(k) if v > 3 }
 number = {a: 1, b: 2, c: 3, d: 5, e: 9}
 number.select { |k, v| v.odd? }
 
-######
-To create a hash called my_details include the elements within { }:
+######Nested Hashes: 
+cocktails = {"martini" => {"vodka" => true, "gin" => false}}
+cocktails["martini"]["vodka"]  #will return true
+cocktails["martini"]["gin"]    #will return false 
+
+
+#To create a hash called my_details include the elements within { }:
 
 my_details = {'name' => 'mashrur', 'favcolor' => 'red'}
 
