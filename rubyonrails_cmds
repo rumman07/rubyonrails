@@ -262,7 +262,7 @@ end
 ###One Line Conditionals
 puts "Big Number" if my_variable > 10
 
-puts "Small Number" unless my_variable > 10   #unless acts like if execpt it is negated i.e. unless => if the condition is not met 
+puts "Small Number" unless my_variable > 10   #unless acts like if except it is negated i.e. unless => if the condition is not met 
 
 ###Basic Negated Conditional  #unless can also function as a regular conditional statement which states if the condition is not met
 unless my_variable > 10 
@@ -299,7 +299,7 @@ end
 
 ###Conditionals can test multiple conditions at once 
 #Boolean AND &&
-if my_var ==10 && your_var == 5 
+if my_var == 10 && your_var == 5 
   ....
 end 
 ###If my_var == 9 the condition is automatically false and the second condition is not tested 
@@ -411,6 +411,42 @@ my_hash.each do |key, value|
 end 
 
 
+
+***********************************Ranges************************************************************************************************************
+#Ruby Ranges allow data to be represented in the form of a range as a data set with start and end values and a logical sequence of values in between
+#The values in a range can be numbers, characters, strings or objects
+#Sequence ranges in Ruby are used to create a range of successive values - consisting of a start value, an end value and a range of values in between
+#Two operators are available for creating such ranges, the inclusive two-dot (..) operator and the exclusive three-dot operator (...)
+1..10  # Creates a range from 1 to 10 inclusive
+1...9  # Creates a range from 1 to 9
+(1..10).to_a  #A range may be converted to an array using the Ruby to_a method
+("a".."l").to_a  #ranges are not restricted to numerical values. We can also create a character based range
+("cab".."car").to_a   #ranges based on string values
+#Methos of the range object 
+range = 'cab'..'car'
+range.min
+range.max
+range.include?('value')
+range.reject {|subrange| subrange < 'value'}  # reject values below a specified range value 
+range.each {|ranges| puts "Hello" + " " + ranges}
+
+################Ranges used in conjunction with a case statement
+
+#!/usr/bin/ruby 
+
+score = 70
+
+result = case score
+  when 0..40 then "Fail"
+  when 41..60 then "Pass"
+  when 61..70 then "Pass with Merit"
+  when 71..100 then "Pass with distinction"
+  else "invalid Score"
+end 
+
+puts result 
+
+
 ************************************************Arrays and Iterators**************************************************************************
 #An Array is an ordered list of objects and elements. It maintains an index for each item so you can access those elements 
 #An Array 
@@ -437,7 +473,7 @@ z.uniq! #mutates the caller the duplicates are gone
 y.each {|i| puts i}  #to iterate through an array use the .each method. It loops through an array 
 #Using the for loop to iterate through an array 
 for number in y
-puts "Hi"
+  puts "Hi"
 end 
 
 #Creating an array of strings
@@ -870,6 +906,54 @@ user = User.new 'joe@example.com', 'joe'
 pp user 
 
 user.save 
+
+
+
+
+*****************************************************Desk.rb************************************************************************************************
+#!/usr/bin/ruby 
+
+puts "Hello"
+puts "Do you have a phone (Y/N)?"
+case gets 
+  when "Y\n"
+    phone = true
+  when "N\n"
+    phone = false 
+end 
+
+puts "Do you have a pencil (Y/N)?"
+case gets 
+  when "Y\n"
+    pencil = true 
+  when "N\n"
+    pencil = false 
+end 
+
+puts "You have a phone" if phone 
+puts "You have a pencil" if pencil 
+
+
+
+************************************************************Grocery_Item.rb************************************************************************************
+#!/usr/bin/ruby 
+
+grocery_items = {orange: false, banana: false}
+puts "Do you need:" 
+grocery_items.each do |item, need_for_item|
+  puts item.to_s + "? (Y/N)"
+  case gets 
+    when "Y\n"
+      grocery_items[item] = true
+    when "N\n"
+      grocery_items[item] = false 
+  end 
+end 
+
+puts "Here's your list:"
+grocery_items.each do |item, need_for_item|
+  puts item if need_for_item 
+end 
 
 
 
