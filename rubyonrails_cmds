@@ -342,6 +342,58 @@ a <= b  #Less than or equal
 a == b  #Equal 
 
 
+**************************************Loops******************************************************************************
+###While Loop: repeats a section of code as long as a specific condition is true. Generally requires the condition to change 
+#as the loop executes in order to avoid infinite loops
+#while loop example: 
+my_var = 10 
+while my_var < 30 do
+  puts "my_var = #{my_var}"
+  my_var += 1
+end 
+
+#loops and arrays are the perfect match: incremental index in the array. Incrementing value of test condition variable 
+pets = ["cats", "dogs", "ducks", "chickens", "fish"]
+pet_index = 0
+while pet_index < pets.count do
+  if pets[pet_index] == "ducks" || pets[pet_index] == "chickens"
+    pets[pet_index] = nill
+  end
+  pet_index += 1 
+end 
+
+#Write a program that asks the user for 10 integers. Then sort the integers from least to greatest. Output the sorted 
+#list to the user 
+integers = []
+current_integer = 0 
+while current_integer < 10 do 
+  puts "Type an integer"
+  integers[current_integer] = gets.to_i 
+  current_integer += 1 
+end 
+integers.sort.each do |this_int|
+  puts this_int 
+end 
+
+
+
+###until loop: the inverse of while 
+my_var = 10
+
+until my_var > 30 do
+  puts "my_var = #{my_var}" 
+  my_var += 1
+end 
+
+
+###for loop example: 
+bags = ["suitcase", "messenger bag", "satchel", "backpack"]
+
+for bag_type in bags do 
+  puts bag_type
+end 
+
+
 *************************************Methods and Branching*************************************************
 def multiply(first_number, second_number)
   first_number.to_f * second_number.to_f
