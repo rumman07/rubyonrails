@@ -832,7 +832,7 @@ User.identify_yourself   #A class method can be called directly on the class wit
 class User   #Class Declaration 
   attr_accessor :name, :email    #Shortcut for getter and setter method 
   
-  def initialize(name)           #Constructor @name and @email are the two instance variables  
+  def initialize(name, email)           #Constructor @name and @email are the two instance variables  
     @name = name 
 	@email = email 
   end 
