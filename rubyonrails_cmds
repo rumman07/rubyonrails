@@ -409,8 +409,108 @@ for bag_type in bags do
   puts bag_type
 end 
 
+#For Loop inclusive range includes 1,2,3,&4:
+for variable in 1..4 do
+  ......
+end 
+
+#For Loop exclusive range includes 1,2,3 excludes 4: 
+for variable in 1...4 do
+  ......
+end 
+
+**********************************************Loop Control******************************************************
+###The keyword next skips the rest of the iteration and moves to the next iteration if the condition is still true 
+
+my_var = 0
+while my_var < 10 do 
+  if my_var == 3 
+    my_var += 1
+    next
+  end 
+  puts my_var
+  my_var += 1 
+end 
+
+###The keyword redo goes to the begining of the iteration of the loop, wether or not the condition is true
+#Redo doesn't check the condition of the loop before redoing the current iteration
+
+my_var = 0 
+while my_var < 10 do 
+  puts my_var 
+  if my_var == 3 
+    my_var = 10
+    redo 
+  end 
+  my_var += 1
+end 
+
+###The keyword break exit the loop immediately 
+
+puts "Type something to continue. Or nothing to quit"
+while a = gets do 
+  
+  if a == "\n"
+    break
+  end
+  puts a 
+end 
+
+#Another example of the keyword break Adding Machine 
+
+total = 0
+puts "Input your numbers"
+while input = gets do 
+  if input == "\n"
+    break
+  end 
+  total = total + input.to_f 
+  puts "running total = #{total}"
+end 
+
+puts "Total: #{total}" 
+
+  
 
 *************************************Methods and Branching*************************************************
+def hello_user
+  puts "Enter your name"
+  username = gets 
+  if username != "\n"
+    "Hello #{username.chop}."
+  else 
+    false
+  end
+end 
+
+*****************************************
+
+def double_my_number number
+  number *=2
+end 
+
+*****************************************
+
+def double_my_number number = 42
+  number *=2
+end 
+
+********************************************
+###Methods that take program blocks:
+
+def my_method 
+  puts "executing your code ..."
+  yield
+  puts "done"
+end 
+
+my_method do 
+  puts 2 + 2
+end 
+
+
+*****************************************
+
 def multiply(first_number, second_number)
   first_number.to_f * second_number.to_f
 end
@@ -453,7 +553,53 @@ end
 
 puts "The result is #{result}"
 
+************************************************
 
+def multiply_this a, b
+  total = a * b
+  if total < 0
+    false
+  else 
+    total
+  end
+end
+
+user_input = []
+puts "Input two numbers"
+while user_number = gets do 
+  user_input[user_input.count] = user_number.to_f 
+  if user_input.count == 2 
+    break
+  end
+end 
+if result = multiply_this(user_input[0], user_input[1])
+  puts result
+else 
+  puts "invalid Input"
+end 
+
+
+************************************************
+
+def get_ingredient 
+  new_ingredient = gets 
+  if new_ingredient != "\n"
+    new_ingredient 
+  else
+    false
+  end 
+end 
+ingredients = []
+puts "Input your ingredients"
+while my_ingredient = get_ingredient do 
+  ingredients[ingredients.count] = my_ingredient 
+end
+puts "Input your instructions"
+instructions = gets 
+puts "Ingredients:"
+puts ingredients 
+puts "Instructions:"
+puts instructions   
 
 **************************************************Iterators************************************************************************************
 #Iterators are special block of code that can operate a statement of code on each member of a data collection
@@ -461,7 +607,7 @@ puts "The result is #{result}"
 #DRY means do not repeat yourself an important fundamental of programming 
 first_five_integers = [1, 2, 3, 4, 5]
 
-#Typing is out 
+#Typing it out 
 puts first_five_integers[0]
 puts first_five_integers[1]
 puts first_five_integers[2]
