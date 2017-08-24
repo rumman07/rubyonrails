@@ -670,6 +670,7 @@ a[1]
 puts a
 a.empty?
 a.include?("Rumman")
+a.delete("value") 
 a.reverse
 a.reverse!   #mutates the caller
 a.shuffle
