@@ -55,7 +55,26 @@ $rails server --binding=<server_public_IP>
 ###http://server_public_IP:3000
 *******************You're now ready to start developing your new Ruby on Rails application. Good luck!****************************************************************************************
 
+###Install visual studio code*********************
+#Create a new file /etc/yum.repos.d/vscode.repo and edit in text editor
+touch /etc/yum.repos.d/vscode.repo
+#Now add following content to the file
+	[vscode]
+	name=Visual Studio Code
+	baseurl=https://packages.microsoft.com/yumrepos/vscode
+	enabled=1
+	gpgcheck=1
+	gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+#Now, import the package signing gpg key on your system using the following command 
+$sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc 
+#After importing gpg key, Let’s use below commands to install Visual Studio Code on your RHEL based system
+$yum check-update 	
+$sudo yum install code 
+#To open a file/folder with vscode 
+$code --user-data-dir=./
 
+
+	
 ###Install sublime Text******************
 #Install the gpg key 
 $sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
@@ -103,7 +122,7 @@ a welcome message
 
 
 
-#######################Declaring COnstans and  Variables********************************************************************** 
+#######################Declaring Constans and  Variables********************************************************************** 
 =begin 
 A Ruby constant is used to store a value for the duration of a Ruby program's execution. A common convention for declaring constants 
 is to use uppercase letters for the entire name
