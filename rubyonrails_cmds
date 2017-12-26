@@ -120,9 +120,21 @@ a welcome message
 #Lines of Ruby code can be blocked out so that they are not executed by the interpreter using the block markers
 
 
+###################################Data Structures and API############################################################### 
+=begin
+API: Application Programming interface. It defines how two pieces of software talk to each other. APIs allow developers to create apps that mash up data from different sources
+Software developers need to know what the request looks like so that the server can understand it and what the response looks like so that they can make 
+sense of the data 
 
-
-#######################Declaring Constans and  Variables********************************************************************** 
+Structured data does not fit into a table: JSON and XML 
+JASON has three basic data types: Number, String, Boolean. In addition to basic data types JASON has Arrays and objects as data types 
+XML has one data type: String  
+Objects are JSON's dictionaries
+Nesting involves putting arrays and objects inside each other creating multiple layers of collection: 
+You can put arrays inside objects, objects inside arrays, arrays inside arrays, etc 
+Often a JSON file is one big object with lots of objects and arrays inside 
+=end 
+#######################Declaring Constants and  Variables********************************************************************** 
 =begin 
 A Ruby constant is used to store a value for the duration of a Ruby program's execution. A common convention for declaring constants 
 is to use uppercase letters for the entire name
