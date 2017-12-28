@@ -1,7 +1,7 @@
 ***Study Materials: 
 https://github.com/bbatsov/ruby-style-guide
 https://www.ruby-lang.org/en/
-
+return allows you to break out early
 
 ###Installing Ruby on Rails on CentOS 7, using rbenv**********************
 #Install rbenv, which we will use to install and manage our Ruby installation. Install the rbenv and Ruby dependencies with yum
