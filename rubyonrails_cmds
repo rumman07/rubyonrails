@@ -703,7 +703,7 @@ a.empty?
 a.include?("Rumman")
 a.delete("value") 
 a.reverse
-a.reverse!   #mutates the caller
+a.reverse!   #mutates the caller with the ! is actually reverses the changes i.e.saves the change 
 a.shuffle
 (0..25).to_a  #takes a range of 0 to 25 and creates an array
 y = (0..99).to_a.shuffle!  #takes a range of 0 to 99 creates an array and shuffle the numbers inside the array
