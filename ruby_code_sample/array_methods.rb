@@ -10,7 +10,25 @@ num1 = Array.new(10, 0..10)
 
 p num1
 
-numbers.push(27)
+numbers.push(50)
+p numbers 
+numbers.push(27, 95, 500, 600, 700)
 numbers << 37 << 47
 numbers.insert(2, 57, 67, 77, 87)
 p numbers
+
+#The shit and unshift method is complementary to the pop and push method in that the shit method
+#removes an eletement from the begining of an array and pop removes an element at the end 
+#unshift adds an element or more than one elements in the begining of an array as opposed to 
+#the push method which adds one or more elements at the end of an array.
+
+arr1 = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000]
+first_item = arr1.shift
+p first_item
+#with argument shift will always return an array 
+first_five_items = arr1.shift(5)
+p first_five_items
+
+arr2 = ["car", "bus", "train", "airplane"]
+p arr2.unshift("ship")
+p arr2.unshift("submarine", "truck", "tank", "bulldozer")
