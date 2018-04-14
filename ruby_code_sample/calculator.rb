@@ -30,7 +30,7 @@ def calculator(num1, num2, oper = :add)
   elsif oper == :mod
     modulus(num1, num2)
   else
-    "THis is not a real math operation. Genius!"
+    "This is not a real math operation. Genius!"
   end
 end
 
