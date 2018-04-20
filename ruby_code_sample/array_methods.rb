@@ -10,6 +10,7 @@ num1 = Array.new(10, 0..10)
 
 p num1
 
+#the push method and the shovel operator mutates the array that is permanently changes the array
 numbers.push(50)
 p numbers 
 numbers.push(27, 95, 500, 600, 700)
@@ -32,3 +33,40 @@ p first_five_items
 arr2 = ["car", "bus", "train", "airplane"]
 p arr2.unshift("ship")
 p arr2.unshift("submarine", "truck", "tank", "bulldozer")
+
+
+#Creating a range of string object and converting it to an array 
+str = "a".."z"
+arr_str = str.to_a
+p arr_str 
+p arr_str.class 
+p arr_str.is_a?(Array)
+p arr_str.is_a?(BasicObject)
+p arr_str.is_a?(Object)
+puts
+p 1.class
+p "a".class
+p [1, 2, 3, 4].class
+p true.class
+p false.class
+p nil.class
+
+#Ruby treats upper case and lower case letters as two seperate lists it first goes through the uppercase
+#letters list then lower case and in beteen are some special charecter: '[\]^_`'
+var = "A".."z"
+puts var.to_a
+
+#The slice method is identical to the square bracket syntax in array
+num2 = [0, 2, 4, 8, 10, 12, 14]
+p num2.slice(3)
+p num2[3]
+p num2.slice(100)
+p num2[100]
+p num2.slice(2, 3)
+p num2[2, 3]
+p num2.slice(4..6)
+p num2[4..6]
+p num2.slice(4...6)
+p num2[4...6]
+
+
