@@ -19,4 +19,4 @@ def name(str)
   end 
 end 
 
-name("london") 
+name("paris") 
