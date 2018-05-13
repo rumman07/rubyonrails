@@ -18,5 +18,7 @@ end
 
 numbers = [3, 9, 5, 7, 10, 1]
 
+p numbers.max
 p custom_max(numbers)
+p numbers.min
 p custom_min(numbers)

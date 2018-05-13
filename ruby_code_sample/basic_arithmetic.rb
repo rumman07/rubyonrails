@@ -1,7 +1,8 @@
-#1 + 4 => Expression: An expression is an evaluation that involves some kind of operation. To perform operation we use symbols like (+ - / %) called operators
+#1 + 4 => Expression: An expression is an evaluation that involves some kind of operation. 
+#To perform operation we use symbols like (+ - / %) called operators
 #Operators are symbols that does something can be mixture of symbols and data type.
 
-p 1 = 4
+p 1 + 4
 
 p 10 - 6
 

@@ -40,3 +40,13 @@ shopping_list = {bananas: 5, oranges: 10,
 p shopping_list.keys 
 p shopping_list.values
 p shopping_list.values.uniq
+
+cars = {toyota: "camry", cheverolet: "aveo", ford: "F-150", kia: "soul"}
+puts cars.key?(:toyota) 
+puts cars.key?(:nissan)
+
+puts cars.value?("camry")
+puts cars.value?("civic")
+
+puts cars.has_key?(:kia)
+puts cars.has_value?("aveo")
