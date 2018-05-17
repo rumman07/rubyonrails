@@ -1,13 +1,29 @@
-#find the two elem in array whose sum = 20
+#Write a longest word method that accepts a string as its only argument the method should return
+#the longest word in the sentence
+def longest_word(sentence)
+  lw = sentence.split
+  max = lw[0].length 
+  ans = []
+  lw.each do |val|
+    if val.length > max
+      ans << val
+      max = val.length 
+    end
+  end
+  ans[-1]
+end
 
+p longest_word("Bobby loves big scary kangaroos")
+
+
+#find the two elem in array whose sum = 20
 def prod(array, product)
   result = []
-  last_index = array.length - 1
   array.each { |val| array.each { |val2| result.push(val, val2) if val * val2 == product } }
   result.uniq
 end
 
-p prod([2, 7, 8, 9, 10], 20)
+p prod([2, 7, 8, 4, 9, 10, 5], 20)
 
 #Find most frequently occuring word in a sentence 
 sentence = "Once upon a time in a land far far far away"
@@ -48,10 +64,8 @@ p arr_inter([1, 3, 4, 6, 7, 9], [1, 2, 4, 5, 9, 10])
 #twice or more
 def dup_char(str)
   chars = str.split("")
-  #ans = []
   count = Hash.new(0)
   chars.each { |char| count[char] += 1 }
-  #freq = 1
   count.each { |key, val| return key if val == 1 }
 end
 
