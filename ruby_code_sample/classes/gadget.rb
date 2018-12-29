@@ -1,3 +1,5 @@
+require_relative "app_store"
+
 class Gadget 
     #def initialize
     def initialize(username, password) 
@@ -42,6 +44,16 @@ class Gadget
     #   @password = new_password 
     # end
 
+    def install_app(name)
+      app = AppStore.find_app(name) 
+      @apps << app unless @apps.include?(app)
+    end
+
+    def delete_app(name)
+      app = apps.find { |installed_app| installed_app.name == name }
+      apps.delete(app) unless app.nil?
+    end
+
     def reset(username, password)
       self.username = username
       self.password = password
@@ -85,11 +97,21 @@ puts laptop.to_s
 puts 
 p phone.methods - Object.methods
 
+puts
 
+g = Gadget.new("Boris", "password")
+p g.apps
 
+g.install_app(:Chat)
+g.install_app(:Twitter)
+g.install_app(:Chat )
+p g.apps 
 
+puts
 
-
+g.delete_app(:Chat)
+g.delete_app(:News)
+p g.apps 
 
 
 

@@ -2,11 +2,11 @@ class Bicycle
     @@maker = "BikeTech"
     @@count = 0
 
-    def  self.description
+    def  self.description   #this is a class method 
       "Hi there! I am the blue print to create bicycle use me to create bicycle"
     end
 
-    def self.count
+    def self.count    #this is a class method
       @@count 
     end
 
